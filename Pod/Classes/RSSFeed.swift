@@ -26,7 +26,8 @@ open class RSSFeed: CustomStringConvertible {
     open var generator: String? = nil
     open var docs: String? = nil
     open var ttl: NSNumber? = nil
-    
+    open var imageURL: URL? = nil
+
     open var items: [RSSItem] = Array()
     
     open var description: String {

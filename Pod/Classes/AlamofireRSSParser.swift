@@ -270,6 +270,14 @@ open class AlamofireRSSParser: NSObject, XMLParserDelegate {
                     self.feed?.lastBuildDate = date
                 }
             }
+            
+            if (elementName == "url") {
+                if self.currentString.lowercased().contains(".jpg") || self.currentString.lowercased().contains(".png") {
+                    if let imageURL = URL(string: self.currentString) {
+                        self.feed?.imageURL = imageURL
+                    }
+                }
+            }
         }
     }
     
